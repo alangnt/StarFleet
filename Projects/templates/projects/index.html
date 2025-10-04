@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Projects</title>
+</head>
+<body>
+    <h1>Projects</h1>
+
+    <ul>
+        {% for project in projects %}
+            <li>
+                <strong>{{ project.title }}</strong><br>
+                {% if project.description %}
+                    <a href="{{ project.description.url }}">Download File</a>
+                {% endif %}
+            </li>
+        {% empty %}
+            <li>No projects yet!</li>
+        {% endfor %}
+    </ul>
+
+    <hr>
+
+    <h2>Add a new project</h2>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

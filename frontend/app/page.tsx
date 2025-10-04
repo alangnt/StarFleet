@@ -43,8 +43,8 @@ export default function Home() {
       <ScrollAssemblyScene scrollProgress={scrollProgress} />
       
       {/* Scrollable content (invisible but creates scroll height) */}
-      <div className="relative pointer-events-none" style={{ height: '500vh' }}>
-        {/* This creates the scrollable area */}
+      <div className="relative pointer-events-none" style={{ height: '1000vh' }}>
+        {/* This creates the scrollable area - 10x viewport height for slower animation */}
       </div>
     </div>
   );

@@ -14,14 +14,11 @@ export default function SplineStation({ progress }: SplineStationProps) {
   
   useEffect(() => {
     if (groupRef.current) {
-      // Assembly animation based on scroll progress
-      const assemblyProgress = Math.min(progress / 0.55, 1); // Complete assembly by 55%
-      
-      // Scale up as it assembles (increased from 0.5-1.0 to 1.0-2.0)
-      const scale = 1.0 + assemblyProgress * 1.0;
+      // Station is fully assembled from the start
+      const scale = 2.0; // Full scale
       groupRef.current.scale.set(scale, scale, scale);
       
-      // Fade in
+      // Ensure full opacity
       groupRef.current.traverse((child) => {
         if ((child as THREE.Mesh).isMesh) {
           const mesh = child as THREE.Mesh;
@@ -29,23 +26,20 @@ export default function SplineStation({ progress }: SplineStationProps) {
             if (Array.isArray(mesh.material)) {
               mesh.material.forEach((mat) => {
                 if (mat instanceof THREE.MeshStandardMaterial) {
-                  mat.transparent = true;
-                  mat.opacity = assemblyProgress;
+                  mat.transparent = false;
+                  mat.opacity = 1;
                 }
               });
             } else if (mesh.material instanceof THREE.MeshStandardMaterial) {
-              mesh.material.transparent = true;
-              mesh.material.opacity = assemblyProgress;
+              mesh.material.transparent = false;
+              mesh.material.opacity = 1;
             }
           }
         }
       });
       
-      // Rotation after assembly complete
-      if (progress > 0.55) {
-        const rotationProgress = (progress - 0.55) / 0.45;
-        groupRef.current.rotation.y = rotationProgress * Math.PI * 2;
-      }
+      // Rotate based on scroll progress
+      groupRef.current.rotation.y = progress * Math.PI * 2;
     }
   }, [progress, scene]);
 

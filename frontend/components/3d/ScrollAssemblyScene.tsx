@@ -15,7 +15,7 @@ interface ScrollAssemblySceneProps {
 export default function ScrollAssemblyScene({ scrollProgress }: ScrollAssemblySceneProps) {
   const canvasRef = useRef<HTMLDivElement>(null);
 
-  // Define repair drone configurations - appear after station is complete
+  // Define repair drone configurations - appear as user scrolls
   const repairDrones = [
     // Drone 1: Patrols central hub
     { 
@@ -23,7 +23,7 @@ export default function ScrollAssemblyScene({ scrollProgress }: ScrollAssemblySc
       target: [1, 0.5, 1], 
       color: '#ff6b6b', 
       speed: 0.08, 
-      appearProgress: 0.56 
+      appearProgress: 0.05 
     },
     // Drone 2: Patrols top lab module
     { 
@@ -31,7 +31,7 @@ export default function ScrollAssemblyScene({ scrollProgress }: ScrollAssemblySc
       target: [-1, 4.5, 1], 
       color: '#4ecdc4', 
       speed: 0.09, 
-      appearProgress: 0.60 
+      appearProgress: 0.15 
     },
     // Drone 3: Patrols bottom module
     { 
@@ -39,7 +39,7 @@ export default function ScrollAssemblyScene({ scrollProgress }: ScrollAssemblySc
       target: [1, -4.2, -1], 
       color: '#ffe66d', 
       speed: 0.07, 
-      appearProgress: 0.64 
+      appearProgress: 0.25 
     },
     // Drone 4: Inspects left side module
     { 
@@ -47,7 +47,7 @@ export default function ScrollAssemblyScene({ scrollProgress }: ScrollAssemblySc
       target: [-4.5, 0.5, 0], 
       color: '#95e1d3', 
       speed: 0.085, 
-      appearProgress: 0.68 
+      appearProgress: 0.35 
     },
     // Drone 5: Inspects right side module
     { 
@@ -55,7 +55,7 @@ export default function ScrollAssemblyScene({ scrollProgress }: ScrollAssemblySc
       target: [4.5, -0.5, 0], 
       color: '#a8e6cf', 
       speed: 0.075, 
-      appearProgress: 0.72 
+      appearProgress: 0.45 
     },
     // Drone 6: Patrols left solar panel
     { 
@@ -63,7 +63,7 @@ export default function ScrollAssemblyScene({ scrollProgress }: ScrollAssemblySc
       target: [-6.5, 2, 0], 
       color: '#ff6b9d', 
       speed: 0.095, 
-      appearProgress: 0.76 
+      appearProgress: 0.55 
     },
     // Drone 7: Patrols right solar panel
     { 
@@ -71,7 +71,7 @@ export default function ScrollAssemblyScene({ scrollProgress }: ScrollAssemblySc
       target: [6.5, -1, 0], 
       color: '#c7ceea', 
       speed: 0.08, 
-      appearProgress: 0.80 
+      appearProgress: 0.65 
     },
     // Drone 8: Inspects communication dish
     { 
@@ -79,7 +79,7 @@ export default function ScrollAssemblyScene({ scrollProgress }: ScrollAssemblySc
       target: [0.5, 1, 4], 
       color: '#ffd93d', 
       speed: 0.09, 
-      appearProgress: 0.84 
+      appearProgress: 0.75 
     },
     // Drone 9: Checks docking port
     { 
@@ -87,7 +87,7 @@ export default function ScrollAssemblyScene({ scrollProgress }: ScrollAssemblySc
       target: [-0.5, -1, -3.5], 
       color: '#6bcf7f', 
       speed: 0.085, 
-      appearProgress: 0.88 
+      appearProgress: 0.85 
     },
   ];
 

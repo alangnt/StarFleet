@@ -9,7 +9,7 @@ export default function AboutPage() {
     { firstName: "Judith", lastName: "Rodo", job: "Mechanical Engineer Student", profileImage: "/members/judith.jpg", linkedin: "https://www.linkedin.com/in/judith-rodo-2a57862b0/" },
     { firstName: "Tra Mi", lastName: "Nguyen", job: "Systems Engineer Student", profileImage: "/members/trami.jpg", linkedin: "https://www.linkedin.com/in/tra-mi-nguyen-08979a2b4/" },
     { firstName: "Blandine", lastName: "Cohen", job: "Mechanical Engineer Student", profileImage: "/members/blandine.jpeg", linkedin: "https://www.linkedin.com/in/blandine-cohen-8525a223b/" },
-    { firstName: "Simon", lastName: "Wirth", job: "UX Designer", profileImage: "/members/simon.jpeg", linkedin: "https://www.linkedin.com/in/simon-wirth-7b687b207/" },
+    { firstName: "Simon", lastName: "Wirth", job: "UX/UI Designer", profileImage: "/members/simon.jpeg", linkedin: "https://www.linkedin.com/in/simon-wirth-7b687b207/" },
     { firstName: "Riccardo", lastName: "Maffei", job: "Computer Science Student", profileImage: "/members/riccardo.jpeg", linkedin: "https://www.linkedin.com/in/riki-m-49aa28235/" },
     { firstName: "Alan", lastName: "Geirnaert", job: "Computer Science Student", profileImage: "/members/alan.jpeg", linkedin: "https://www.linkedin.com/in/alan-geirnaert/" },
   ]

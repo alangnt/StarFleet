@@ -177,266 +177,354 @@ export default function StarlabStationPage() {
             </div>
           </section>
 
-          {/* Vision Section */}
-          <section className="mb-24">
-            <div className="text-center mb-16">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-pink-500/10 border border-white/10 mb-6 backdrop-blur-sm">
-                <svg className="w-5 h-5 text-blue-400" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M10 2a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 0110 2zM10 15a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 0110 15zM10 7a3 3 0 100 6 3 3 0 000-6zM15.657 5.404a.75.75 0 10-1.06-1.06l-1.061 1.06a.75.75 0 001.06 1.06l1.06-1.06zM6.464 14.596a.75.75 0 10-1.06-1.06l-1.06 1.06a.75.75 0 001.06 1.06l1.06-1.06zM18 10a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0118 10zM5 10a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 015 10zM14.596 15.657a.75.75 0 001.06-1.06l-1.06-1.061a.75.75 0 10-1.06 1.06l1.06 1.06zM5.404 6.464a.75.75 0 001.06-1.06l-1.06-1.06a.75.75 0 10-1.061 1.06l1.06 1.06z" />
-                </svg>
-                <span className="text-sm font-semibold bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
-                  Our Vision
-                </span>
-              </div>
-              <h2 className="text-5xl md:text-6xl font-extrabold mb-6" style={{letterSpacing: '-0.02em'}}>
-                <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
-                  StarFleet:
-                </span>
-                <br />
-                <span className="text-white">Autonomous Satellite Repair</span>
-              </h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-                Deploy coordinated swarms of micro-robots to autonomously repair satellites, maintain orbital infrastructure, and reduce space debris—extending the operational life of critical space assets.
+          {/* Project Story */}
+          <section className="mb-20">
+            <div className="max-w-4xl mx-auto">
+              <h2 className="text-3xl font-bold mb-6 text-white">The Challenge</h2>
+              <p className="text-lg text-gray-300 mb-4 leading-relaxed">
+                Every year, satellites worth billions of dollars fail not because of catastrophic malfunctions, but from minor, fixable issues: a loose solar panel, a stuck antenna, or accumulated debris on critical surfaces.
+              </p>
+              <p className="text-lg text-gray-300 mb-4 leading-relaxed">
+                Current solutions? Send astronauts on dangerous spacewalks, or abandon the asset entirely. Both options are expensive, risky, and unsustainable as we launch thousands more satellites into orbit.
+              </p>
+              <p className="text-lg text-gray-300 leading-relaxed">
+                We&apos;re building something different: a fleet of autonomous micro-robots that can perform repairs, maintenance, and debris collection around Starlab Space Station—and eventually, anywhere in orbit.
               </p>
             </div>
           </section>
 
-          {/* The Problem */}
-          <section className="mb-24">
-            <h3 className="text-3xl font-bold mb-12 text-center">
-              <span className="bg-gradient-to-r from-red-400 to-orange-400 bg-clip-text text-transparent">
-                The Problem
-              </span>
-            </h3>
-            <div className="grid md:grid-cols-2 gap-6">
-              {[
-                { icon: '👨‍🚀', title: 'Costly Spacewalks', desc: 'Space maintenance requires expensive, risky EVA missions that endanger astronaut lives' },
-                { icon: '🛰️', title: 'Space Debris Crisis', desc: 'Damaged satellites become orbital debris, threatening operational spacecraft' },
-                { icon: '💰', title: 'Millions Per Mission', desc: 'Traditional maintenance missions cost millions and require extensive planning' },
-                { icon: '⚠️', title: 'Growing Threat', desc: 'Increasing orbital debris poses catastrophic collision risks' }
-              ].map((problem, i) => (
-                <div key={i} className="p-6 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-300">
-                  <div className="text-4xl mb-4">{problem.icon}</div>
-                  <h4 className="text-xl font-bold mb-2 text-white">{problem.title}</h4>
-                  <p className="text-gray-400">{problem.desc}</p>
-                </div>
-              ))}
-            </div>
-          </section>
-
-          {/* Our Solution */}
-          <section className="mb-24">
-            <h3 className="text-3xl font-bold mb-12 text-center">
-              <span className="bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent">
-                StarFleet Solution: Swarm Intelligence
-              </span>
-            </h3>
-            <div className="grid lg:grid-cols-3 gap-8">
-              {[
-                {
-                  icon: '🤖',
-                  title: 'Autonomous Maintenance',
-                  features: ['Repair micro-scratches', 'Tighten bolts', 'Clean solar panels', 'Apply UV resin patches']
-                },
-                {
-                  icon: '🔗',
-                  title: 'Swarm Intelligence',
-                  features: ['UWB radio positioning', 'UHF robot-to-robot mesh', 'GNSS navigation', 'Coordinated operations']
-                },
-                {
-                  icon: '🎯',
-                  title: 'Precision Navigation',
-                  features: ['Stereo vision systems', 'LIDAR mapping', 'IMU stabilization', 'Sub-millimeter accuracy']
-                }
-              ].map((solution, i) => (
-                <div key={i} className="p-8 rounded-2xl bg-gradient-to-br from-blue-500/10 to-purple-500/10 border border-blue-500/20 hover:border-blue-500/40 transition-all duration-300">
-                  <div className="text-5xl mb-4">{solution.icon}</div>
-                  <h4 className="text-2xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-                    {solution.title}
-                  </h4>
-                  <ul className="space-y-2">
-                    {solution.features.map((feature, j) => (
-                      <li key={j} className="flex items-start gap-2 text-gray-300">
-                        <svg className="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                        </svg>
-                        <span>{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
-          </section>
-
-          {/* Technical Features */}
-          <section className="mb-24">
-            <h3 className="text-3xl font-bold mb-12 text-center">
-              <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
-                Advanced Technology
-              </span>
-            </h3>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {[
-                { title: 'Advanced Sensors', items: ['Stereo cameras', 'Force sensors', 'Thermal imaging', 'LIDAR systems'] },
-                { title: 'Micro-Propulsion', items: ['PID control systems', 'Reaction wheels', 'Cold gas thrusters', 'Precision maneuvering'] },
-                { title: 'Radiation Protection', items: ['Hardened components', '5-10mm Al shielding', 'Multi-layer insulation', 'Thermal management'] },
-                { title: 'Modular Tools', items: ['Micro grippers', 'Screwdrivers', 'Cleaning brushes', 'UV resin applicators'] },
-                { title: 'Communication', items: ['UHF mesh network', 'Earth uplink/downlink', 'Inter-drone protocols', 'Autonomous routines'] },
-                { title: 'Power Systems', items: ['Efficient batteries', 'Solar charging', 'Power management', 'Long-duration ops'] }
-              ].map((tech, i) => (
-                <div key={i} className="p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-cyan-500/30 transition-all duration-300">
-                  <h4 className="text-lg font-bold mb-3 text-cyan-400">{tech.title}</h4>
-                  <ul className="space-y-1.5 text-sm">
-                    {tech.items.map((item, j) => (
-                      <li key={j} className="text-gray-400 flex items-center gap-2">
-                        <span className="w-1 h-1 rounded-full bg-cyan-400"></span>
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
-          </section>
-
-          {/* Benefits */}
-          <section className="mb-24">
-            <h3 className="text-3xl font-bold mb-12 text-center">
-              <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-                Key Benefits
-              </span>
-            </h3>
-            <div className="grid md:grid-cols-4 gap-6">
-              {[
-                { metric: '60%', label: 'Cost Reduction', desc: 'vs. traditional missions', color: 'from-green-400 to-emerald-400' },
-                { metric: '40%+', label: 'Debris Reduction', desc: 'Sustainable operations', color: 'from-blue-400 to-cyan-400' },
-                { metric: '+5 Years', label: 'Extended Lifespan', desc: 'Satellite longevity', color: 'from-purple-400 to-pink-400' },
-                { metric: '90%', label: 'Safer', desc: 'Reduced EVA risks', color: 'from-orange-400 to-red-400' }
-              ].map((benefit, i) => (
-                <div key={i} className="text-center p-8 rounded-2xl bg-white/5 border border-white/10 hover:scale-105 transition-all duration-300">
-                  <div className={`text-5xl font-extrabold mb-2 bg-gradient-to-r ${benefit.color} bg-clip-text text-transparent`}>
-                    {benefit.metric}
+          {/* How It Works */}
+          <section className="mb-20">
+            <div className="max-w-5xl mx-auto">
+              <h2 className="text-3xl font-bold mb-10 text-white">How StarFleet Works</h2>
+              
+              <div className="space-y-6">
+                <div className="flex gap-6 items-start">
+                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-blue-500/20 border border-blue-500/40 flex items-center justify-center text-blue-400 font-bold text-lg">
+                    1
                   </div>
-                  <div className="text-xl font-bold text-white mb-1">{benefit.label}</div>
-                  <div className="text-sm text-gray-400">{benefit.desc}</div>
+                  <div>
+                    <h3 className="text-xl font-semibold mb-2 text-white">Deploy from Starlab</h3>
+                    <p className="text-gray-400">Micro-robots launch from the station&apos;s airlock, using GNSS and UWB positioning to locate their target satellite or debris.</p>
+                  </div>
                 </div>
-              ))}
+
+                <div className="flex gap-6 items-start">
+                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-purple-500/20 border border-purple-500/40 flex items-center justify-center text-purple-400 font-bold text-lg">
+                    2
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold mb-2 text-white">Swarm Coordination</h3>
+                    <p className="text-gray-400">Using UHF mesh networking, robots communicate and coordinate in real-time, sharing data and dividing tasks autonomously.</p>
+                  </div>
+                </div>
+
+                <div className="flex gap-6 items-start">
+                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-indigo-500/20 border border-indigo-500/40 flex items-center justify-center text-indigo-400 font-bold text-lg">
+                    3
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold mb-2 text-white">Precision Repair</h3>
+                    <p className="text-gray-400">Stereo vision and LIDAR enable sub-millimeter positioning. Modular tools perform repairs: tightening bolts, cleaning panels, applying patches.</p>
+                  </div>
+                </div>
+
+                <div className="flex gap-6 items-start">
+                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-pink-500/20 border border-pink-500/40 flex items-center justify-center text-pink-400 font-bold text-lg">
+                    4
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold mb-2 text-white">Return & Refuel</h3>
+                    <p className="text-gray-400">After completing their mission, robots autonomously dock back at Starlab to recharge, swap tools, and prepare for the next task.</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </section>
 
-          {/* Target Market */}
-          <section className="mb-24">
-            <h3 className="text-3xl font-bold mb-12 text-center text-white">Target Market</h3>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {[
-                { icon: '🚀', name: 'Private Space Companies', examples: 'SpaceX, OneWeb, Blue Origin' },
-                { icon: '🏛️', name: 'Government Agencies', examples: 'NASA, ESA, JAXA' },
-                { icon: '📡', name: 'Satellite Operators', examples: 'Commercial & Defense' },
-                { icon: '🛰️', name: 'Space Stations', examples: 'ISS, Starlab, Gateway' }
-              ].map((market, i) => (
-                <div key={i} className="p-6 rounded-2xl bg-gradient-to-br from-indigo-500/10 to-purple-500/10 border border-indigo-500/20 text-center hover:border-indigo-500/40 transition-all duration-300">
-                  <div className="text-5xl mb-3">{market.icon}</div>
-                  <h4 className="text-lg font-bold text-white mb-2">{market.name}</h4>
-                  <p className="text-sm text-gray-400">{market.examples}</p>
+          {/* Key Capabilities */}
+          <section className="mb-20">
+            <div className="max-w-5xl mx-auto">
+              <h2 className="text-3xl font-bold mb-8 text-white">Key Capabilities</h2>
+              
+              <div className="grid md:grid-cols-2 gap-8">
+                <div className="bg-white/5 border border-white/10 rounded-xl p-6">
+                  <h3 className="text-xl font-semibold mb-3 text-blue-400">Modular Tool System</h3>
+                  <p className="text-gray-400 mb-4">Each robot carries interchangeable tools for different tasks. Quick-swap mechanism allows tool changes in under 30 seconds.</p>
+                  <ul className="space-y-2 text-sm text-gray-400">
+                    <li className="flex items-center gap-2">
+                      <span className="w-1.5 h-1.5 bg-blue-400 rounded-full"></span>
+                      Micro grippers for bolt manipulation
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="w-1.5 h-1.5 bg-blue-400 rounded-full"></span>
+                      Cleaning brushes for solar panel debris
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="w-1.5 h-1.5 bg-blue-400 rounded-full"></span>
+                      UV resin applicator for micro-patches
+                    </li>
+                  </ul>
                 </div>
-              ))}
+
+                <div className="bg-white/5 border border-white/10 rounded-xl p-6">
+                  <h3 className="text-xl font-semibold mb-3 text-purple-400">Swarm Communication</h3>
+                  <p className="text-gray-400 mb-4">Decentralized mesh network enables real-time coordination without relying on ground control for every decision.</p>
+                  <ul className="space-y-2 text-sm text-gray-400">
+                    <li className="flex items-center gap-2">
+                      <span className="w-1.5 h-1.5 bg-purple-400 rounded-full"></span>
+                      UHF radio for inter-robot messaging
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="w-1.5 h-1.5 bg-purple-400 rounded-full"></span>
+                      Earth uplink for mission updates
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="w-1.5 h-1.5 bg-purple-400 rounded-full"></span>
+                      Autonomous fallback routines
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="bg-white/5 border border-white/10 rounded-xl p-6">
+                  <h3 className="text-xl font-semibold mb-3 text-indigo-400">Precision Navigation</h3>
+                  <p className="text-gray-400 mb-4">Multi-sensor fusion provides sub-millimeter positioning accuracy, critical for delicate repair operations.</p>
+                  <ul className="space-y-2 text-sm text-gray-400">
+                    <li className="flex items-center gap-2">
+                      <span className="w-1.5 h-1.5 bg-indigo-400 rounded-full"></span>
+                      Stereo cameras for depth perception
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="w-1.5 h-1.5 bg-indigo-400 rounded-full"></span>
+                      LIDAR for 3D environment mapping
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="w-1.5 h-1.5 bg-indigo-400 rounded-full"></span>
+                      IMU for attitude stabilization
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="bg-white/5 border border-white/10 rounded-xl p-6">
+                  <h3 className="text-xl font-semibold mb-3 text-pink-400">Space-Hardened Design</h3>
+                  <p className="text-gray-400 mb-4">Built to survive the harsh environment of space with radiation protection and thermal management systems.</p>
+                  <ul className="space-y-2 text-sm text-gray-400">
+                    <li className="flex items-center gap-2">
+                      <span className="w-1.5 h-1.5 bg-pink-400 rounded-full"></span>
+                      5-10mm aluminum radiation shielding
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="w-1.5 h-1.5 bg-pink-400 rounded-full"></span>
+                      Multi-layer insulation blankets
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="w-1.5 h-1.5 bg-pink-400 rounded-full"></span>
+                      Redundant critical systems
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </section>
 
-          {/* Challenges & Solutions */}
-          <section className="mb-24">
-            <h3 className="text-3xl font-bold mb-12 text-center">
-              <span className="bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent">
-                Challenges & Solutions
-              </span>
-            </h3>
-            <div className="space-y-4">
-              {[
-                { challenge: 'Radiation Exposure', solution: 'Space-hardened components with multi-layer shielding', icon: '☢️' },
-                { challenge: 'Cybersecurity Risks', solution: 'Blockchain authentication with multi-signature control', icon: '🔒' },
-                { challenge: 'Zero-Gravity Positioning', solution: 'Visual servoing combined with reaction wheels', icon: '🎯' },
-                { challenge: 'Communication Latency', solution: 'Predictive AI with autonomous operation modes', icon: '📡' }
-              ].map((item, i) => (
-                <div key={i} className="p-6 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-300 flex items-center gap-6">
-                  <div className="text-4xl">{item.icon}</div>
+          {/* Why This Matters */}
+          <section className="mb-20">
+            <div className="max-w-4xl mx-auto">
+              <h2 className="text-3xl font-bold mb-6 text-white">Why This Matters</h2>
+              <div className="bg-gradient-to-br from-blue-500/10 to-purple-500/10 border border-blue-500/20 rounded-xl p-8 mb-6">
+                <p className="text-lg text-gray-300 mb-4">
+                  The orbital debris problem is accelerating. At current rates, we&apos;ll face a Kessler Syndrome scenario within decades—where collisions create more debris, triggering a cascade that makes certain orbits unusable.
+                </p>
+                <p className="text-lg text-gray-300">
+                  StarFleet robots don&apos;t just fix satellites. They fundamentally change how we think about space sustainability. Instead of launching new replacements, we extend existing assets. Instead of creating more debris, we actively clean it up.
+                </p>
+              </div>
+              
+              <div className="grid md:grid-cols-3 gap-6">
+                <div className="text-center">
+                  <div className="text-4xl font-bold text-green-400 mb-2">60%</div>
+                  <div className="text-sm text-gray-400">Lower cost than traditional satellite servicing missions</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-4xl font-bold text-blue-400 mb-2">5+ years</div>
+                  <div className="text-sm text-gray-400">Extended operational life for serviced satellites</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-4xl font-bold text-purple-400 mb-2">Zero</div>
+                  <div className="text-sm text-gray-400">Human EVA risk for routine maintenance tasks</div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Development Roadmap */}
+          <section className="mb-20">
+            <div className="max-w-5xl mx-auto">
+              <h2 className="text-3xl font-bold mb-8 text-white">Development Roadmap</h2>
+              
+              <div className="space-y-4">
+                <div className="flex gap-4">
+                  <div className="flex flex-col items-center">
+                    <div className="w-3 h-3 rounded-full bg-green-400"></div>
+                    <div className="w-0.5 flex-1 bg-gradient-to-b from-green-400 to-blue-400"></div>
+                  </div>
+                  <div className="flex-1 pb-8">
+                    <div className="flex items-center gap-3 mb-2">
+                      <h3 className="text-xl font-semibold text-white">Phase 1: Prototype Development</h3>
+                      <span className="px-3 py-1 bg-green-500/20 text-green-400 text-xs font-semibold rounded-full border border-green-500/40">Complete</span>
+                    </div>
+                    <p className="text-gray-400 text-sm mb-2">Q2-Q3 2025</p>
+                    <p className="text-gray-400">Initial proof-of-concept robots tested in lab conditions. Swarm communication protocols validated.</p>
+                  </div>
+                </div>
+
+                <div className="flex gap-4">
+                  <div className="flex flex-col items-center">
+                    <div className="w-3 h-3 rounded-full bg-blue-400"></div>
+                    <div className="w-0.5 flex-1 bg-gradient-to-b from-blue-400 to-purple-400"></div>
+                  </div>
+                  <div className="flex-1 pb-8">
+                    <div className="flex items-center gap-3 mb-2">
+                      <h3 className="text-xl font-semibold text-white">Phase 2: Ground Testing</h3>
+                      <span className="px-3 py-1 bg-blue-500/20 text-blue-400 text-xs font-semibold rounded-full border border-blue-500/40">In Progress</span>
+                    </div>
+                    <p className="text-gray-400 text-sm mb-2">Q4 2025 - Q1 2026</p>
+                    <p className="text-gray-400">Air-bearing simulators replicate microgravity. Tool systems refined. Navigation algorithms stress-tested.</p>
+                  </div>
+                </div>
+
+                <div className="flex gap-4">
+                  <div className="flex flex-col items-center">
+                    <div className="w-3 h-3 rounded-full bg-purple-400"></div>
+                    <div className="w-0.5 flex-1 bg-gradient-to-b from-purple-400 to-pink-400"></div>
+                  </div>
+                  <div className="flex-1 pb-8">
+                    <div className="flex items-center gap-3 mb-2">
+                      <h3 className="text-xl font-semibold text-white">Phase 3: ISS Mission</h3>
+                      <span className="px-3 py-1 bg-purple-500/20 text-purple-400 text-xs font-semibold rounded-full border border-purple-500/40">Upcoming</span>
+                    </div>
+                    <p className="text-gray-400 text-sm mb-2">Q2 2026</p>
+                    <p className="text-gray-400">Demonstration mission on ISS external platform. Real-world validation of autonomous docking and basic repairs.</p>
+                  </div>
+                </div>
+
+                <div className="flex gap-4">
+                  <div className="flex flex-col items-center">
+                    <div className="w-3 h-3 rounded-full bg-pink-400"></div>
+                  </div>
                   <div className="flex-1">
-                    <div className="flex flex-col md:flex-row md:items-center gap-2 md:gap-4">
-                      <span className="text-red-400 font-bold">Challenge:</span>
-                      <span className="text-white">{item.challenge}</span>
+                    <div className="flex items-center gap-3 mb-2">
+                      <h3 className="text-xl font-semibold text-white">Phase 4: Starlab Deployment</h3>
+                      <span className="px-3 py-1 bg-gray-500/20 text-gray-400 text-xs font-semibold rounded-full border border-gray-500/40">Planned</span>
                     </div>
-                    <div className="flex flex-col md:flex-row md:items-center gap-2 md:gap-4 mt-2">
-                      <span className="text-green-400 font-bold">Solution:</span>
-                      <span className="text-gray-300">{item.solution}</span>
-                    </div>
+                    <p className="text-gray-400 text-sm mb-2">Q4 2026</p>
+                    <p className="text-gray-400">Full fleet deployment around Starlab Space Station. Begin commercial servicing operations.</p>
                   </div>
                 </div>
-              ))}
+              </div>
             </div>
           </section>
 
           {/* Partnership */}
-          <section className="mb-24">
-            <div className="p-12 rounded-3xl bg-gradient-to-br from-blue-600/10 via-purple-600/10 to-pink-600/10 border border-white/10 text-center">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-pink-500/20 border border-white/20 mb-6 backdrop-blur-sm">
-                <svg className="w-5 h-5 text-purple-400" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z" />
-                </svg>
-                <span className="text-sm font-semibold bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
-                  Strategic Partnership
-                </span>
+          <section className="mb-20">
+            <div className="max-w-4xl mx-auto">
+              <div className="bg-gradient-to-br from-blue-600/10 via-purple-600/10 to-pink-600/10 border border-white/10 rounded-xl p-8">
+                <h2 className="text-2xl font-bold mb-4 text-white">ClearSpace Partnership</h2>
+                <p className="text-gray-300 mb-4">
+                  We&apos;re collaborating with ClearSpace, the Swiss space debris removal company, to integrate their proven gripper technology into our micro-robots. Their expertise in orbital capture systems complements our autonomous swarm capabilities.
+                </p>
+                <p className="text-gray-400 text-sm">
+                  This partnership accelerates development while ensuring our robots meet the highest standards for safety and reliability.
+                </p>
               </div>
-              <h3 className="text-4xl font-bold mb-4">
-                <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-                  ClearSpace Collaboration
-                </span>
-              </h3>
-              <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-                Partnering with ClearSpace to integrate their proven gripper technology for enhanced capture and manipulation capabilities
-              </p>
             </div>
           </section>
 
-          {/* Next Steps */}
-          <section className="text-center">
-            <h3 className="text-3xl font-bold mb-8 text-white">Next Steps</h3>
-            <div className="grid md:grid-cols-3 gap-6 mb-12">
-              {[
-                { step: '01', title: 'Fund Development', desc: 'Complete R&D and prototype testing' },
-                { step: '02', title: 'Earth Testing', desc: 'Air-bearing simulators and ground validation' },
-                { step: '03', title: 'ISS Mission', desc: 'Space qualification and demonstration' }
-              ].map((next, i) => (
-                <div key={i} className="p-8 rounded-2xl bg-gradient-to-br from-blue-500/10 to-purple-500/10 border border-blue-500/20">
-                  <div className="text-5xl font-extrabold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent mb-3">
-                    {next.step}
+          {/* Technical Challenges */}
+          <section className="mb-20">
+            <div className="max-w-4xl mx-auto">
+              <h2 className="text-3xl font-bold mb-6 text-white">Technical Challenges We&apos;re Solving</h2>
+              <p className="text-gray-400 mb-8">Building autonomous robots for space isn&apos;t easy. Here&apos;s how we&apos;re tackling the hardest problems:</p>
+              
+              <div className="space-y-4">
+                <div className="bg-white/5 border border-white/10 rounded-lg p-6">
+                  <div className="flex items-start gap-4">
+                    <div className="text-2xl">☢️</div>
+                    <div className="flex-1">
+                      <h3 className="font-semibold text-white mb-2">Radiation Hardening</h3>
+                      <p className="text-sm text-gray-400 mb-2">Challenge: Electronics fail rapidly in high-radiation environments</p>
+                      <p className="text-sm text-gray-300">Solution: Radiation-tolerant components with 5-10mm aluminum shielding and redundant critical systems</p>
+                    </div>
                   </div>
-                  <h4 className="text-xl font-bold text-white mb-2">{next.title}</h4>
-                  <p className="text-gray-400">{next.desc}</p>
                 </div>
-              ))}
-            </div>
 
-            {/* Final CTA */}
-            <div className="relative rounded-3xl overflow-hidden p-12 border border-white/10">
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 via-purple-600/20 to-pink-600/20 backdrop-blur-xl"></div>
-              <div className="relative z-10">
-                <h3 className="text-4xl md:text-5xl font-bold mb-6">
-                  <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
-                    Join the Revolution
-                  </span>
-                </h3>
-                <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-                  Help us build the future of sustainable space operations
-                </p>
-                <button className="group relative px-12 py-5 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white text-lg font-bold rounded-2xl transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/40">
-                  <span className="relative z-10 flex items-center gap-3">
-                    Back This Project Now
-                    <svg className="w-6 h-6 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                    </svg>
-                  </span>
-                </button>
+                <div className="bg-white/5 border border-white/10 rounded-lg p-6">
+                  <div className="flex items-start gap-4">
+                    <div className="text-2xl">🎯</div>
+                    <div className="flex-1">
+                      <h3 className="font-semibold text-white mb-2">Precision in Microgravity</h3>
+                      <p className="text-sm text-gray-400 mb-2">Challenge: No friction or gravity reference makes positioning extremely difficult</p>
+                      <p className="text-sm text-gray-300">Solution: Visual servoing combined with reaction wheels for attitude control, achieving sub-millimeter accuracy</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="bg-white/5 border border-white/10 rounded-lg p-6">
+                  <div className="flex items-start gap-4">
+                    <div className="text-2xl">🔒</div>
+                    <div className="flex-1">
+                      <h3 className="font-semibold text-white mb-2">Cybersecurity</h3>
+                      <p className="text-sm text-gray-400 mb-2">Challenge: Autonomous systems could be compromised or hijacked</p>
+                      <p className="text-sm text-gray-300">Solution: Blockchain-based authentication for all commands with multi-signature verification from ground control</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="bg-white/5 border border-white/10 rounded-lg p-6">
+                  <div className="flex items-start gap-4">
+                    <div className="text-2xl">📡</div>
+                    <div className="flex-1">
+                      <h3 className="font-semibold text-white mb-2">Communication Delays</h3>
+                      <p className="text-sm text-gray-400 mb-2">Challenge: Real-time control from Earth is impossible due to signal latency</p>
+                      <p className="text-sm text-gray-300">Solution: Onboard AI enables autonomous decision-making with periodic check-ins to ground stations</p>
+                    </div>
+                  </div>
+                </div>
               </div>
+            </div>
+          </section>
+
+          {/* The Team */}
+          <section className="mb-20">
+            <div className="max-w-4xl mx-auto text-center">
+              <h2 className="text-3xl font-bold mb-6 text-white">Who We Are</h2>
+              <p className="text-lg text-gray-400 mb-8">
+                A team of aerospace engineers, roboticists, and space enthusiasts from across Europe, united by a shared vision of sustainable space operations. We met at the NASA Space Apps Challenge and decided to turn our hackathon prototype into reality.
+              </p>
+              <a 
+                href="/about" 
+                className="inline-flex items-center gap-2 px-6 py-3 bg-white/10 hover:bg-white/20 border border-white/20 rounded-lg text-white transition-all duration-200"
+              >
+                Meet the Team
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+              </a>
+            </div>
+          </section>
+
+          {/* Final CTA */}
+          <section>
+            <div className="max-w-3xl mx-auto text-center">
+              <h2 className="text-4xl font-bold mb-4 text-white">
+                Help Us Build the Future
+              </h2>
+              <p className="text-lg text-gray-400 mb-8">
+                Your support brings us one step closer to making orbital maintenance sustainable, affordable, and safe. Back StarFleet today.
+              </p>
+              <button className="px-10 py-4 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white text-lg font-semibold rounded-xl hover:shadow-lg hover:shadow-purple-500/50 transition-all duration-300 hover:scale-105">
+                Back This Project
+              </button>
             </div>
           </section>
 

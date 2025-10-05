@@ -82,7 +82,7 @@ export default function StarlabStationPage() {
             <div className="divider-gradient mb-5"></div>
             
             {/* Stats */}
-            <div className="grid grid-cols-2 gap-3 mb-5">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-5">
               <div className="bg-gradient-to-br from-blue-500/10 to-purple-600/10 border border-blue-500/20 rounded-xl p-4 text-center">
                 <div className="text-2xl font-bold gradient-text-static">1,247</div>
                 <div className="text-xs text-gray-400 mt-1 font-medium">Backers</div>
@@ -109,7 +109,7 @@ export default function StarlabStationPage() {
       <ScrollAssemblyScene scrollProgress={scrollProgress} />
       
       {/* Scrollable content - this creates the scroll space */}
-      <div className="relative" style={{ height: '1000vh' }}></div>
+      <div className="relative" style={{ height: '400vh' }}></div>
 
       {/* Detailed Project Information */}
       <div className="relative bg-gradient-to-b from-black via-gray-900 to-black text-white py-24">
@@ -153,7 +153,7 @@ export default function StarlabStationPage() {
                 <div className="divider-gradient mb-8"></div>
                 
                 {/* Stats */}
-                <div className="grid grid-cols-2 gap-6 mb-8">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
                   <div className="bg-gradient-to-br from-blue-500/10 to-purple-600/10 border border-blue-500/20 rounded-xl p-6 text-center">
                     <div className="text-3xl font-bold gradient-text-static">1,247</div>
                     <div className="text-sm text-gray-400 mt-2 font-medium">Backers</div>

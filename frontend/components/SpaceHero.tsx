@@ -512,7 +512,7 @@ export default function SpaceHero() {
       {/* Main content */}
       <div className="relative z-10 min-h-screen flex items-center justify-center pointer-events-none">
         <div className="text-center px-4 pointer-events-auto">
-          <h1 ref={titleRef} className="text-7xl md:text-9xl font-bold mb-8 text-white" style={{ textShadow: '0 0 30px rgba(165, 180, 252, 0.5), 0 0 60px rgba(196, 181, 253, 0.3)' }}>
+          <h1 ref={titleRef} className="text-5xl md:text-9xl font-bold mb-8 text-white" style={{ textShadow: '0 0 30px rgba(165, 180, 252, 0.5), 0 0 60px rgba(196, 181, 253, 0.3)' }}>
             {splitTitle(sections[0].title)}
           </h1>
           

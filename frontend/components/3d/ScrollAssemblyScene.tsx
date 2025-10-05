@@ -4,9 +4,8 @@ import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Stars } from '@react-three/drei';
 import { EffectComposer, Bloom, ChromaticAberration } from '@react-three/postprocessing';
 import { BlendFunction } from 'postprocessing';
-import SplineStation from './SplineStation';
-import ScrollRepairDrone from './ScrollRepairDrone';
-import SmallSatellite from './SmallSatellite';
+import SpaceStationModel from './SpaceStationModel';
+import DroneModel from './DroneModel';
 import { Suspense, useRef, useState, useEffect } from 'react';
 
 interface ScrollAssemblySceneProps {
@@ -29,88 +28,82 @@ export default function ScrollAssemblyScene({ scrollProgress }: ScrollAssemblySc
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
-  // Define 2 satellites that need repair around the station
-  const satellites = [
-    { position: [8, 3, 2] as [number, number, number], color: '#4ecdc4', scale: 1.2 },
-    { position: [-8, -2, -3] as [number, number, number], color: '#ff6b6b', scale: 1.1 },
-  ];
-
-  // Define repair drones - multiple drones navigate to each satellite for repairs
+  // Define repair drones positions - more drones appearing sooner
   const repairDrones = [
-    // Drones repairing Satellite 1 (cyan)
     { 
-      start: [12, 5, 5], 
-      target: satellites[0].position,
-      color: satellites[0].color,
-      speed: 0.08, 
+      start: [12, 5, 5] as [number, number, number], 
+      target: [2, 2, 2] as [number, number, number],
       appearProgress: 0.1 
     },
     { 
-      start: [5, 8, -2], 
-      target: satellites[0].position,
-      color: satellites[0].color,
-      speed: 0.09, 
+      start: [5, 8, -2] as [number, number, number], 
+      target: [-2, 3, 1] as [number, number, number],
+      appearProgress: 0.15 
+    },
+    { 
+      start: [10, -1, 6] as [number, number, number], 
+      target: [3, -2, 2] as [number, number, number],
       appearProgress: 0.2 
     },
     { 
-      start: [10, -1, 6], 
-      target: satellites[0].position,
-      color: satellites[0].color,
-      speed: 0.07, 
+      start: [-12, -5, -6] as [number, number, number], 
+      target: [-2, -2, -2] as [number, number, number],
+      appearProgress: 0.25 
+    },
+    { 
+      start: [-6, -8, 3] as [number, number, number], 
+      target: [1, -3, -1] as [number, number, number],
       appearProgress: 0.3 
     },
     { 
-      start: [6, 6, -4], 
-      target: satellites[0].position,
-      color: satellites[0].color,
-      speed: 0.085, 
+      start: [8, 3, -4] as [number, number, number], 
+      target: [2, 1, -2] as [number, number, number],
+      appearProgress: 0.35 
+    },
+    { 
+      start: [-8, 4, 5] as [number, number, number], 
+      target: [-1, 2, 2] as [number, number, number],
       appearProgress: 0.4 
     },
-    // Drones repairing Satellite 2 (red)
     { 
-      start: [-12, -5, -6], 
-      target: satellites[1].position,
-      color: satellites[1].color,
-      speed: 0.075, 
+      start: [6, -6, -5] as [number, number, number], 
+      target: [2, -2, -1] as [number, number, number],
+      appearProgress: 0.45 
+    },
+    { 
+      start: [-10, 6, -3] as [number, number, number], 
+      target: [-2, 2, -1] as [number, number, number],
       appearProgress: 0.5 
     },
     { 
-      start: [-6, -8, 3], 
-      target: satellites[1].position,
-      color: satellites[1].color,
-      speed: 0.095, 
+      start: [7, -7, 4] as [number, number, number], 
+      target: [1, -2, 1] as [number, number, number],
+      appearProgress: 0.55 
+    },
+    { 
+      start: [-5, -5, -7] as [number, number, number], 
+      target: [-1, -1, -2] as [number, number, number],
       appearProgress: 0.6 
     },
     { 
-      start: [-10, 2, -7], 
-      target: satellites[1].position,
-      color: satellites[1].color,
-      speed: 0.08, 
-      appearProgress: 0.7 
+      start: [9, 7, 3] as [number, number, number], 
+      target: [2, 2, 1] as [number, number, number],
+      appearProgress: 0.65 
     },
-    { 
-      start: [-5, -6, 5], 
-      target: satellites[1].position,
-      color: satellites[1].color, 
-      speed: 0.09, 
-      appearProgress: 0.8 
-    },
-  ];  // Get section information based on scroll progress
+  ];
+
+  // Get section information based on scroll progress
   const getSectionInfo = () => {
-    if (scrollProgress < 0.1) {
-      return { title: "The Core", description: "Every great station starts with a strong foundation" };
-    } else if (scrollProgress < 0.2) {
-      return { title: "Command Module", description: "State-of-the-art control systems coming online" };
-    } else if (scrollProgress < 0.3) {
-      return { title: "Research Labs", description: "Cutting-edge scientific facilities" };
-    } else if (scrollProgress < 0.4) {
-      return { title: "Power Systems", description: "Advanced solar arrays generating clean energy" };
-    } else if (scrollProgress < 0.52) {
-      return { title: "Communications", description: "Staying connected across the cosmos" };
-    } else if (scrollProgress < 0.9) {
-      return { title: "Station Complete", description: "Deploying maintenance drone fleet" };
+    if (scrollProgress < 0.15) {
+      return { title: "Starlab Space Station", description: "The future of orbital research and development" };
+    } else if (scrollProgress < 0.35) {
+      return { title: "Deploying Drone Fleet", description: "Autonomous repair systems launching" };
+    } else if (scrollProgress < 0.55) {
+      return { title: "Swarm Coordination", description: "12 drones working in perfect harmony" };
+    } else if (scrollProgress < 0.75) {
+      return { title: "Active Maintenance", description: "Precision repairs across the station" };
     } else {
-      return { title: "Starlab Station", description: "Fully operational - Autonomous repair systems active" };
+      return { title: "Starlab Station", description: "Fully operational with autonomous fleet" };
     }
   };
 
@@ -170,27 +163,15 @@ export default function ScrollAssemblyScene({ scrollProgress }: ScrollAssemblySc
           {/* Fog for depth */}
           <fog attach="fog" args={['#000000', 30, 100]} />
 
-          {/* Spline Space Station Model with scroll progress */}
-          <SplineStation progress={scrollProgress} />
+          {/* Space Station GLTF Model */}
+          <SpaceStationModel progress={scrollProgress} />
 
-          {/* Small Satellites around the station */}
-          {satellites.map((satellite, index) => (
-            <SmallSatellite
-              key={index}
-              position={satellite.position}
-              color={satellite.color}
-              scale={satellite.scale}
-            />
-          ))}
-
-          {/* Repair Drones - appear progressively and navigate to satellites */}
+          {/* Repair Drones - GLTF models navigating around the station */}
           {repairDrones.map((drone, index) => (
-            <ScrollRepairDrone
+            <DroneModel
               key={index}
-              startPosition={drone.start as [number, number, number]}
-              targetPosition={drone.target as [number, number, number]}
-              color={drone.color}
-              speed={drone.speed}
+              startPosition={drone.start}
+              targetPosition={drone.target}
               appearProgress={drone.appearProgress}
               currentProgress={scrollProgress}
             />
@@ -265,14 +246,10 @@ export default function ScrollAssemblyScene({ scrollProgress }: ScrollAssemblySc
             <div className="flex gap-8 justify-center text-sm text-gray-400 mt-8">
               <div>
                 <p className="text-3xl font-bold text-white">{Math.round(scrollProgress * 100)}%</p>
-                <p>Assembly Complete</p>
+                <p>Complete</p>
               </div>
               <div>
-                <p className="text-3xl font-bold text-white">7</p>
-                <p>Modules</p>
-              </div>
-              <div>
-                <p className="text-3xl font-bold text-white">9</p>
+                <p className="text-3xl font-bold text-white">12</p>
                 <p>Repair Drones</p>
               </div>
               <div>
@@ -287,7 +264,7 @@ export default function ScrollAssemblyScene({ scrollProgress }: ScrollAssemblySc
       {/* Scroll instruction */}
       {scrollProgress < 0.1 && (
         <div className="fixed bottom-10 left-1/2 transform -translate-x-1/2 text-center animate-bounce">
-          <p className="text-white text-sm mb-2">Scroll to repair</p>
+          <p className="text-white text-sm mb-2">Scroll to explore</p>
           <svg 
             className="w-6 h-6 mx-auto text-white" 
             fill="none" 

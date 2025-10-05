@@ -22,7 +22,7 @@ export default function AboutPage() {
       <section className="pt-24 pb-16 bg-gradient-to-b from-blue-950/20 to-black">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-slate-300 to-indigo-300 bg-clip-text text-transparent">
-            About StarFleet & myStarlab
+            About StarFleet & MyStarlab
           </h1>
           <p className="text-xl text-gray-300">
             Collaboration, sustainability, and accessibility for the future of space exploration
@@ -39,7 +39,7 @@ export default function AboutPage() {
             </h2>
             <p className="text-lg text-gray-300 mb-4">
               At StarFleet, we believe the future of space exploration depends on collaboration, sustainability, and accessibility. 
-              Our hackathon project, <span className="font-semibold text-blue-300">myStarlab</span>, is a crowdfunding platform dedicated to space research and aerospace innovation, 
+              Our hackathon project, <span className="font-semibold text-blue-300">MyStarlab</span>, is a crowdfunding platform dedicated to space research and aerospace innovation, 
               connecting visionary scientists and engineers with a global community of backers who share their passion for discovery.
             </p>
             <p className="text-lg text-gray-300 mb-4">
@@ -48,7 +48,7 @@ export default function AboutPage() {
               around the upcoming Starlab Space Station.
             </p>
             <p className="text-lg text-gray-300">
-              Together, myStarlab and StarFleet Micro-Robots form an interconnected ecosystem: one finances the future of space innovation, 
+              Together, MyStarlab and StarFleet Micro-Robots form an interconnected ecosystem: one finances the future of space innovation, 
               and the other powers it in orbit.
             </p>
           </div>
@@ -192,23 +192,25 @@ export default function AboutPage() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold mb-6 text-center">Meet Our Team</h2>
           <p className="text-lg text-gray-300 text-center mb-12">
-            myStarlab was founded by a team of aerospace engineers, researchers, and technologists who believe 
+            MyStarlab was founded by a team of aerospace engineers, researchers, and technologists who believe 
             that the future of space exploration should be open to everyone. We combine decades of experience 
             in space systems, software development, and crowdfunding to create the premier platform for space research funding.
           </p>
           
-          {/* Team Photo Placeholder */}
+          {/* Team Photo */}
           <div className="mb-16">
             <div className="relative overflow-hidden rounded-2xl border border-white/20 bg-gradient-to-br from-blue-950/30 to-purple-950/30 backdrop-blur-sm">
-              <div className="aspect-[21/9] flex items-center justify-center">
-                <div className="text-center">
-                  <div className="text-6xl mb-4">👥</div>
-                  <p className="text-gray-400 text-lg">Team Photo Coming Soon</p>
-                  <p className="text-gray-500 text-sm mt-2">Our amazing team working together to make space accessible</p>
-                </div>
+              <div className="aspect-video relative">
+                <Image 
+                  src="/members/team.jpeg"
+                  alt="StarFleet Team"
+                  fill
+                  className="object-cover"
+                  priority
+                />
+                {/* Decorative overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent pointer-events-none"></div>
               </div>
-              {/* Decorative overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent pointer-events-none"></div>
             </div>
           </div>
 
@@ -283,7 +285,7 @@ export default function AboutPage() {
           </h2>
           <p className="text-xl text-gray-300 mb-8">
             Whether you&apos;re a researcher with a groundbreaking idea or a backer ready to support innovation, 
-            myStarlab is your launchpad to the stars.
+            MyStarlab is your launchpad to the stars.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link 

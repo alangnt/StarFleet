@@ -222,7 +222,6 @@ This project is part of the 2025 NASA Space Apps Challenge in Lucerne, Switzerla
 ## 🙏 Acknowledgments
 
 - **NASA** - For providing open data APIs and orbital debris statistics
-- **Open Notify** - For ISS tracking and astronaut APIs
 - **Union of Concerned Scientists** - For comprehensive satellite database
 - **Three.js Community** - For 3D rendering tools and resources
 - **Next.js Team** - For the amazing framework

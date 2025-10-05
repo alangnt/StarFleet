@@ -8,7 +8,7 @@ interface ScrollRepairDroneProps {
   startPosition: [number, number, number];
   targetPosition: [number, number, number];
   color?: string;
-  speed?: number;
+  speed?: number; // Kept for backwards compatibility but not used
   appearProgress: number; // When the drone should appear (0-1)
   currentProgress: number; // Current scroll progress (0-1)
 }
@@ -17,7 +17,6 @@ export default function ScrollRepairDrone({
   startPosition, 
   targetPosition, 
   color = '#ff6b6b',
-  speed = 0.5,
   appearProgress,
   currentProgress
 }: ScrollRepairDroneProps) {
@@ -62,14 +61,13 @@ export default function ScrollRepairDrone({
   useFrame((state) => {
     if (!droneRef.current || visibility === 0) return;
 
-    // Base movement on scroll progress, not time - this prevents jittery movement
+    // Base movement purely on scroll progress - no time-based animation
     // Map the current progress to a position along the curve
-    const progressRange = 0.3; // How much scroll range affects movement
+    const progressRange = 0.4; // How much scroll range affects movement (40% of total scroll)
     const localProgress = Math.max(0, Math.min(1, (currentProgress - appearProgress) / progressRange));
     
-    // Add subtle oscillation based on time for natural movement
-    const timeOffset = Math.sin(state.clock.elapsedTime * speed * 0.2) * 0.1;
-    const t = Math.min(0.95, Math.max(0.05, localProgress + timeOffset));
+    // Use localProgress directly without time offset for smooth, scroll-based movement
+    const t = Math.min(0.99, Math.max(0.01, localProgress));
     
     const position = curve.getPointAt(t);
     droneRef.current.position.copy(position);
@@ -79,20 +77,20 @@ export default function ScrollRepairDrone({
     const lookAtPoint = position.clone().add(tangent);
     droneRef.current.lookAt(lookAtPoint);
 
-    // Rotate propellers
-    const propellerSpeed = 0.5;
+    // Rotate propellers - still time-based for visual effect
+    const propellerSpeed = 0.3;
     if (propeller1Ref.current) propeller1Ref.current.rotation.y += propellerSpeed;
     if (propeller2Ref.current) propeller2Ref.current.rotation.y += propellerSpeed;
     if (propeller3Ref.current) propeller3Ref.current.rotation.y += propellerSpeed;
     if (propeller4Ref.current) propeller4Ref.current.rotation.y += propellerSpeed;
 
-    // Pulse the light
+    // Pulse the light - time-based for visual effect
     if (lightRef.current) {
       lightRef.current.intensity = (0.5 + Math.sin(state.clock.elapsedTime * 3) * 0.3) * visibility;
     }
 
-    // Slight bobbing motion
-    droneRef.current.position.y += Math.sin(state.clock.elapsedTime * 2) * 0.01;
+    // Very subtle bobbing motion - much smaller
+    droneRef.current.position.y += Math.sin(state.clock.elapsedTime * 1.5) * 0.005;
   });
 
   if (visibility === 0) return null;

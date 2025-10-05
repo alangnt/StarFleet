@@ -439,7 +439,7 @@ export default function SpaceHero() {
     }
 
     if (scrollProgressRef.current) {
-      tl.from(scrollProgressRef.current, { opacity: 0, y: 50, duration: 1, ease: "power2.out" }, "-=0.5");
+      tl.from(scrollProgressRef.current, { opacity: 0, y: 50, duration: 0.8, ease: "power2.out" }, "-=0.5");
     }
 
     return () => { tl.kill(); };
@@ -502,7 +502,7 @@ export default function SpaceHero() {
   const sections = [
     { title: 'MYSTARLAB', subtitle: { line1: 'Where vision meets reality,', line2: 'we shape the future of space exploration' } },
     { title: 'COSMOS', subtitle: { line1: 'Beyond the boundaries of imagination,', line2: 'lies the universe of possibilities' } },
-    { title: 'INFINITY', subtitle: { line1: 'In the space between thought and creation,', line2: 'we find the essence of true innovation' } }
+    { title: 'IMAGINATION', subtitle: { line1: 'It\'s the only limit' } },
   ];
 
   return (

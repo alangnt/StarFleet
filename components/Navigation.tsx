@@ -71,6 +71,15 @@ export default function Navigation() {
                 <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-1/2 h-0.5 bg-gradient-to-r from-slate-400 via-indigo-400 to-violet-400 rounded-full glow-pulse"></span>
               )}
             </Link>
+            <Link href="/space-ops" className={navLinkClass('/space-ops')}>
+              <span className="px-4 py-2 rounded-lg hover:bg-white/10 transition-all duration-200 flex items-center gap-1">
+                <span className="w-1.5 h-1.5 bg-green-400 rounded-full animate-pulse"></span>
+                Space Ops
+              </span>
+              {isActive('/space-ops') && (
+                <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-1/2 h-0.5 bg-gradient-to-r from-slate-400 via-indigo-400 to-violet-400 rounded-full glow-pulse"></span>
+              )}
+            </Link>
             <Link href="/about" className={navLinkClass('/about')}>
               <span className="px-4 py-2 rounded-lg hover:bg-white/10 transition-all duration-200">About</span>
               {isActive('/about') && (
@@ -126,6 +135,19 @@ export default function Navigation() {
               }`}
             >
               Projects
+            </Link>
+            <Link 
+              href="/space-ops" 
+              className={`block px-4 py-3 rounded-xl transition-all duration-300 ${
+                isActive('/space-ops') 
+                  ? 'bg-gradient-to-r from-slate-500/20 to-indigo-500/20 text-white font-semibold border border-indigo-500/30' 
+                  : 'text-gray-300 hover:bg-white/10 hover:text-white'
+              }`}
+            >
+              <span className="flex items-center gap-2">
+                <span className="w-1.5 h-1.5 bg-green-400 rounded-full animate-pulse"></span>
+                Space Ops
+              </span>
             </Link>
             <Link 
               href="/about" 

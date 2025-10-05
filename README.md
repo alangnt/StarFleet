@@ -8,7 +8,7 @@
 
 A next-generation crowdfunding platform for space research and innovation projects, featuring real-time NASA data integration and immersive 3D visualizations.
 
-![myStarlab Banner](https://img.shields.io/badge/Space-Innovation-purple?style=for-the-badge)
+![MyStarlab Banner](https://img.shields.io/badge/Space-Innovation-purple?style=for-the-badge)
 
 ## 🌟 Overview
 
@@ -35,7 +35,6 @@ StarFleet is a swarm of autonomous micro-robots designed for:
 ### 🛰️ NASA Data Integration
 
 - **Live ISS Tracking** - Real-time International Space Station position updates
-- **Astronaut Data** - Current humans in space with crew assignments
 - **Orbital Debris Statistics** - 34,000+ trackable objects tracked by NASA
 - **Satellite Infrastructure** - 8,377+ active satellites categorized by purpose
 - **Space Operations Dashboard** - Comprehensive view of orbital activities
@@ -67,7 +66,6 @@ myStarlab/
 │   ├── Navigation.tsx           # Main navigation with Space Ops link
 │   ├── SpaceHero.tsx           # Hero section component
 │   ├── ProjectCard.tsx          # Project card component
-│   ├── ISSTracker.tsx          # Live ISS position tracker
 │   ├── DebrisTracker.tsx       # Orbital debris statistics
 │   ├── SatelliteTracker.tsx    # Satellite infrastructure data
 │   └── 3d/                     # Three.js 3D components
@@ -135,10 +133,6 @@ npm run start
 
 The platform integrates multiple NASA and space agency data sources:
 
-### Real-Time APIs
-
-- **[Open Notify ISS Location](http://open-notify.org/Open-Notify-API/ISS-Location-Now/)** - ISS coordinates updated every 5 seconds
-- **[Open Notify Astronauts](http://open-notify.org/Open-Notify-API/People-In-Space/)** - Current humans in space
 
 ### Static Data Sources
 
@@ -214,16 +208,16 @@ The platform integrates multiple NASA and space agency data sources:
 
 ### StarFleet Team Members
 
-- **Riccardo Maffei** - Project Lead
+- **Riccardo Maffei** - Computer Science Student
 - **Alan Geirnaert** - Full Stack Developer
 - **Judith Van Cauter** - UX/UI Designer
-- **Trami Nguyen** - Data Scientist
-- **Blandine Mandin** - Business Development
-- **Simon Ghyselinck** - Systems Engineer
+- **Trami Nguyen** - Systems Engineering Student
+- **Blandine Mandin** - Mechanical Engineering Student
+- **Simon Ghyselinck** - Mechanical Engineering Student
 
 ## 📄 License
 
-This project is part of the NASA Space Apps Challenge.
+This project is part of the 2025 NASA Space Apps Challenge in Lucerne, Switzerland.
 
 ## 🙏 Acknowledgments
 
@@ -235,9 +229,8 @@ This project is part of the NASA Space Apps Challenge.
 
 ## 🔗 Links
 
-- **Live Demo**: [Coming Soon]
-- **Project Repository**: [GitHub](https://github.com/Riccardo-Maffei/NASA-Hackaton-Project---team-)
-- **NASA Space Apps Challenge**: [Website](https://www.spaceappschallenge.org/)
+- **Project URL**: [Website](https://star-fleet-iota.vercel.app/home)
+- **NASA Space Apps Challenge**: [Website](https://www.spaceappschallenge.org/2025/find-a-team/spacefleet/?tab=project)
 
 ## 📞 Contact
 

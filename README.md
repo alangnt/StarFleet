@@ -248,6 +248,6 @@ For questions or collaboration opportunities, please reach out through:
 
 ---
 
-**Built with ❤️ for the NASA Space Apps Challenge 2024**
+**Built with ❤️ for the NASA Space Apps Challenge 2025**
 
 _Making space research accessible to everyone through crowdfunding and real-time data visualization._

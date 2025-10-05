@@ -44,7 +44,7 @@ export default function StarlabStationPage() {
       
       {/* Project Info Overlay - fades out when reaching detailed section */}
       <div 
-        className="fixed top-20 left-4 z-40 pointer-events-none backdrop-blur-xs transition-opacity duration-300"
+        className="fixed top-20 left-4 z-40 pointer-events-none backdrop-blur-xs transition-opacity duration-300 max-md:hidden"
         style={{ opacity: scrollProgress >= 0.65 ? 0 : 1 }}
       >
         <div className="card-premium p-7 pointer-events-auto max-w-md border border-white/10 rounded overflow-hidden">
@@ -108,8 +108,8 @@ export default function StarlabStationPage() {
       {/* Fixed 3D Scene */}
       <ScrollAssemblyScene scrollProgress={scrollProgress} />
       
-      {/* Scrollable content */}
-      <div className="relative pointer-events-none" style={{ height: '1000vh' }}></div>
+      {/* Scrollable content - this creates the scroll space */}
+      <div className="relative" style={{ height: '1000vh' }}></div>
 
       {/* Detailed Project Information */}
       <div className="relative bg-gradient-to-b from-black via-gray-900 to-black text-white py-24">

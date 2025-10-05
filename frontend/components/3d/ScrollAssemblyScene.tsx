@@ -7,7 +7,7 @@ import { BlendFunction } from 'postprocessing';
 import SplineStation from './SplineStation';
 import ScrollRepairDrone from './ScrollRepairDrone';
 import SmallSatellite from './SmallSatellite';
-import { Suspense, useRef } from 'react';
+import { Suspense, useRef, useState, useEffect } from 'react';
 
 interface ScrollAssemblySceneProps {
   scrollProgress: number;
@@ -15,6 +15,19 @@ interface ScrollAssemblySceneProps {
 
 export default function ScrollAssemblyScene({ scrollProgress }: ScrollAssemblySceneProps) {
   const canvasRef = useRef<HTMLDivElement>(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    // Detect if device is mobile/tablet
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 1024); // Disable rotation below 1024px (tablet/mobile)
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   // Define 2 satellites that need repair around the station
   const satellites = [
@@ -104,7 +117,11 @@ export default function ScrollAssemblyScene({ scrollProgress }: ScrollAssemblySc
   const sectionInfo = getSectionInfo();
 
   return (
-    <div ref={canvasRef} className="fixed inset-0 w-full h-screen bg-gradient-to-b from-black via-gray-900 to-black">
+    <div 
+      ref={canvasRef} 
+      className="fixed inset-0 w-full h-screen bg-gradient-to-b from-black via-gray-900 to-black"
+      style={{ pointerEvents: isMobile ? 'none' : 'auto' }}
+    >
       <Canvas
         camera={{ position: [12, 8, 12], fov: 50 }}
         gl={{ 
@@ -179,12 +196,12 @@ export default function ScrollAssemblyScene({ scrollProgress }: ScrollAssemblySc
             />
           ))}
 
-          {/* Camera Controls - less aggressive */}
+          {/* Camera Controls - disabled rotation on mobile for scrolling */}
           <OrbitControls 
             enableZoom={false}
             enablePan={false}
-            enableRotate={true}
-            autoRotate={scrollProgress > 0.55}
+            enableRotate={!isMobile}
+            autoRotate={!isMobile && scrollProgress > 0.55}
             autoRotateSpeed={0.8}
             minPolarAngle={Math.PI / 3}
             maxPolarAngle={Math.PI / 1.5}

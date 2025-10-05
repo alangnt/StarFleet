@@ -62,11 +62,15 @@ export default function ScrollRepairDrone({
   useFrame((state) => {
     if (!droneRef.current || visibility === 0) return;
 
-    // Use clock time directly instead of accumulating delta - this makes movement consistent
-    const elapsedTime = state.clock.elapsedTime * speed * 0.05;
+    // Base movement on scroll progress, not time - this prevents jittery movement
+    // Map the current progress to a position along the curve
+    const progressRange = 0.3; // How much scroll range affects movement
+    const localProgress = Math.max(0, Math.min(1, (currentProgress - appearProgress) / progressRange));
     
-    // Move along the curve (loop back and forth) - much slower oscillation
-    const t = (Math.sin(elapsedTime * 0.1) + 1) / 4;
+    // Add subtle oscillation based on time for natural movement
+    const timeOffset = Math.sin(state.clock.elapsedTime * speed * 0.2) * 0.1;
+    const t = Math.min(0.95, Math.max(0.05, localProgress + timeOffset));
+    
     const position = curve.getPointAt(t);
     droneRef.current.position.copy(position);
 

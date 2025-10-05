@@ -63,6 +63,3 @@ export default function DroneModel({
     </group>
   );
 }
-
-// Preload the model
-useGLTF.preload('/drone.gltf');

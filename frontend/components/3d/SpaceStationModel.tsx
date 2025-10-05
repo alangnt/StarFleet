@@ -32,6 +32,3 @@ export default function SpaceStationModel({ progress }: SpaceStationModelProps) 
     </group>
   );
 }
-
-// Preload the model
-useGLTF.preload('/space-station.gltf');

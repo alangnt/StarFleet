@@ -1,4 +1,4 @@
-# 🚀 myStarlab - Space Innovation Crowdfunding Platform
+# 🚀 MyStarlab - Space Innovation Crowdfunding Platform along with StarFleet
 
 [![Next.js](https://img.shields.io/badge/Next.js-15.5.4-black?style=flat-square&logo=next.js)](https://nextjs.org/)
 [![React](https://img.shields.io/badge/React-18+-blue?style=flat-square&logo=react)](https://reactjs.org/)

@@ -16,6 +16,19 @@ const ScrollAssemblyScene = dynamic(() => import('@/components/3d/ScrollAssembly
 
 export default function StarlabStationPage() {
   const [scrollProgress, setScrollProgress] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    // Detect if device is mobile/tablet
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 1024);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -105,11 +118,15 @@ export default function StarlabStationPage() {
           </div>
       </div>
 
-      {/* Fixed 3D Scene */}
-      <ScrollAssemblyScene scrollProgress={scrollProgress} />
-      
-      {/* Scrollable content - this creates the scroll space */}
-      <div className="relative" style={{ height: '400vh' }}></div>
+      {/* Fixed 3D Scene - Desktop Only */}
+      {!isMobile && (
+        <>
+          <ScrollAssemblyScene scrollProgress={scrollProgress} />
+          
+          {/* Scrollable content - this creates the scroll space */}
+          <div className="relative" style={{ height: '400vh' }}></div>
+        </>
+      )}
 
       {/* Detailed Project Information */}
       <div className="relative bg-gradient-to-b from-black via-gray-900 to-black text-white py-24">

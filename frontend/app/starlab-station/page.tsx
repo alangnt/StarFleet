@@ -66,7 +66,7 @@ export default function StarlabStationPage() {
               </div>
               <div className="relative w-full bg-gradient-to-r from-gray-800 to-gray-700 rounded-full h-3 overflow-hidden">
                 <div 
-                  className="absolute inset-0 bg-gradient-to-r from-blue-500 via-purple-600 to-pink-500 h-3 rounded-full transition-all duration-500 glow-pulse"
+                  className="absolute inset-0 bg-gradient-to-r from-slate-400 via-indigo-400 to-violet-400 h-3 rounded-full transition-all duration-500 glow-pulse"
                   style={{ width: '48%' }}
                 ></div>
               </div>
@@ -90,7 +90,7 @@ export default function StarlabStationPage() {
               </div>
             </div>
             
-            <button className="group relative w-full px-6 py-4 bg-gradient-to-r from-blue-500 via-purple-600 to-pink-500 text-white font-bold rounded-xl hover:from-blue-600 hover:via-purple-700 hover:to-pink-600 transition-all duration-300 transform hover:scale-105 btn-glow overflow-hidden">
+            <button className="group relative w-full px-6 py-4 bg-gradient-to-r from-slate-500 via-indigo-500 to-violet-500 text-white font-bold rounded-xl hover:from-slate-600 hover:via-indigo-600 hover:to-violet-600 transition-all duration-300 transform hover:scale-105 btn-glow overflow-hidden">
               <span className="relative z-10 flex items-center justify-center gap-2">
                 Back This Project
                 <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
@@ -119,10 +119,10 @@ export default function StarlabStationPage() {
                   <span>Autonomous Operations</span>
                 </div>
                 <p className="text-white text-xl font-bold mb-2">
-                  Autonomous Repair Drones in Action
+                  Satellite Repair Mission
                 </p>
                 <p className="text-gray-400 text-sm font-medium">
-                  Scroll to explore the station and watch drones appear • {Math.round(scrollProgress * 100)}% explored
+                  Watch repair drones deploy to fix malfunctioning satellites • {Math.round(scrollProgress * 100)}% explored
                 </p>
               </div>
             </div>
@@ -146,7 +146,7 @@ export default function StarlabStationPage() {
                 <p className="text-gray-300 mb-6 text-lg">
                   Help make autonomous space maintenance a reality
                 </p>
-                <button className="group relative px-10 py-4 bg-gradient-to-r from-blue-500 via-purple-600 to-pink-500 text-white font-bold rounded-2xl hover:from-blue-600 hover:via-purple-700 hover:to-pink-600 transition-all duration-300 transform hover:scale-105 btn-glow overflow-hidden">
+                <button className="group relative px-10 py-4 bg-gradient-to-r from-slate-500 via-indigo-500 to-violet-500 text-white font-bold rounded-2xl hover:from-slate-600 hover:via-indigo-600 hover:to-violet-600 transition-all duration-300 transform hover:scale-105 btn-glow overflow-hidden">
                   <span className="relative z-10 flex items-center gap-2">
                     Support This Project
                     <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>

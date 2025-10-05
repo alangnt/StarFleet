@@ -11,7 +11,7 @@ export default function AboutPage() {
       {/* Hero Section */}
       <section className="pt-24 pb-16 bg-gradient-to-b from-blue-950/20 to-black">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+          <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-slate-300 to-indigo-300 bg-clip-text text-transparent">
             About myStarlab
           </h1>
           <p className="text-xl text-gray-300">
@@ -24,7 +24,7 @@ export default function AboutPage() {
       <section className="py-16 bg-black">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 p-8 md:p-12">
-            <h2 className="text-3xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+            <h2 className="text-3xl font-bold mb-6 bg-gradient-to-r from-slate-300 to-indigo-300 bg-clip-text text-transparent">
               Our Mission
             </h2>
             <p className="text-lg text-gray-300 mb-4">
@@ -84,28 +84,28 @@ export default function AboutPage() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="bg-gradient-to-br from-blue-900/20 to-purple-900/20 backdrop-blur-sm rounded-xl border border-white/10 p-8 text-center">
-              <div className="text-4xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent mb-2">
+              <div className="text-4xl font-bold bg-gradient-to-r from-slate-300 to-indigo-300 bg-clip-text text-transparent mb-2">
                 $12.4M
               </div>
               <div className="text-gray-400">Total Funded</div>
             </div>
             
             <div className="bg-gradient-to-br from-purple-900/20 to-pink-900/20 backdrop-blur-sm rounded-xl border border-white/10 p-8 text-center">
-              <div className="text-4xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent mb-2">
+              <div className="text-4xl font-bold bg-gradient-to-r from-indigo-300 to-violet-300 bg-clip-text text-transparent mb-2">
                 47
               </div>
               <div className="text-gray-400">Active Projects</div>
             </div>
             
             <div className="bg-gradient-to-br from-pink-900/20 to-blue-900/20 backdrop-blur-sm rounded-xl border border-white/10 p-8 text-center">
-              <div className="text-4xl font-bold bg-gradient-to-r from-pink-400 to-blue-400 bg-clip-text text-transparent mb-2">
+              <div className="text-4xl font-bold bg-gradient-to-r from-violet-300 to-slate-300 bg-clip-text text-transparent mb-2">
                 15,247
               </div>
               <div className="text-gray-400">Backers</div>
             </div>
             
             <div className="bg-gradient-to-br from-blue-900/20 to-purple-900/20 backdrop-blur-sm rounded-xl border border-white/10 p-8 text-center">
-              <div className="text-4xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent mb-2">
+              <div className="text-4xl font-bold bg-gradient-to-r from-slate-300 to-indigo-300 bg-clip-text text-transparent mb-2">
                 23
               </div>
               <div className="text-gray-400">Completed</div>
@@ -176,7 +176,7 @@ export default function AboutPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link 
               href="/projects"
-              className="px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white text-lg font-semibold rounded-lg hover:from-blue-600 hover:to-purple-700 transition-all duration-200 transform hover:scale-105"
+              className="px-8 py-4 bg-gradient-to-r from-slate-500 to-indigo-500 text-white text-lg font-semibold rounded-lg hover:from-slate-600 hover:to-indigo-600 transition-all duration-200 transform hover:scale-105"
             >
               Explore Projects
             </Link>

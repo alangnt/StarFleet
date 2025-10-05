@@ -113,7 +113,7 @@ export default function ProjectCard({
         {/* Progress indicator on image */}
         <div className="absolute bottom-0 left-0 right-0 h-1.5 bg-black/40 backdrop-blur-sm">
           <div 
-            className="h-full bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 transition-all duration-500 relative overflow-hidden"
+            className="h-full bg-gradient-to-r from-slate-400 via-indigo-400 to-violet-400 transition-all duration-500 relative overflow-hidden"
             style={{ width: `${fundingPercentage}%` }}
           >
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent animate-shimmer"></div>

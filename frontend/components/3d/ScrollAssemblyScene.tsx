@@ -6,6 +6,7 @@ import { EffectComposer, Bloom, ChromaticAberration } from '@react-three/postpro
 import { BlendFunction } from 'postprocessing';
 import SplineStation from './SplineStation';
 import ScrollRepairDrone from './ScrollRepairDrone';
+import SmallSatellite from './SmallSatellite';
 import { Suspense, useRef } from 'react';
 
 interface ScrollAssemblySceneProps {
@@ -15,83 +16,73 @@ interface ScrollAssemblySceneProps {
 export default function ScrollAssemblyScene({ scrollProgress }: ScrollAssemblySceneProps) {
   const canvasRef = useRef<HTMLDivElement>(null);
 
-  // Define repair drone configurations - appear as user scrolls
-  const repairDrones = [
-    // Drone 1: Patrols central hub
-    { 
-      start: [5, 3, 5], 
-      target: [1, 0.5, 1], 
-      color: '#ff6b6b', 
-      speed: 0.08, 
-      appearProgress: 0.05 
-    },
-    // Drone 2: Patrols top lab module
-    { 
-      start: [-4, 8, 3], 
-      target: [-1, 4.5, 1], 
-      color: '#4ecdc4', 
-      speed: 0.09, 
-      appearProgress: 0.15 
-    },
-    // Drone 3: Patrols bottom module
-    { 
-      start: [6, -6, -2], 
-      target: [1, -4.2, -1], 
-      color: '#ffe66d', 
-      speed: 0.07, 
-      appearProgress: 0.25 
-    },
-    // Drone 4: Inspects left side module
-    { 
-      start: [-10, 2, 4], 
-      target: [-4.5, 0.5, 0], 
-      color: '#95e1d3', 
-      speed: 0.085, 
-      appearProgress: 0.35 
-    },
-    // Drone 5: Inspects right side module
-    { 
-      start: [10, -3, -3], 
-      target: [4.5, -0.5, 0], 
-      color: '#a8e6cf', 
-      speed: 0.075, 
-      appearProgress: 0.45 
-    },
-    // Drone 6: Patrols left solar panel
-    { 
-      start: [-12, 4, 2], 
-      target: [-6.5, 2, 0], 
-      color: '#ff6b9d', 
-      speed: 0.095, 
-      appearProgress: 0.55 
-    },
-    // Drone 7: Patrols right solar panel
-    { 
-      start: [12, -2, 5], 
-      target: [6.5, -1, 0], 
-      color: '#c7ceea', 
-      speed: 0.08, 
-      appearProgress: 0.65 
-    },
-    // Drone 8: Inspects communication dish
-    { 
-      start: [3, 6, 10], 
-      target: [0.5, 1, 4], 
-      color: '#ffd93d', 
-      speed: 0.09, 
-      appearProgress: 0.75 
-    },
-    // Drone 9: Checks docking port
-    { 
-      start: [-4, -4, -10], 
-      target: [-0.5, -1, -3.5], 
-      color: '#6bcf7f', 
-      speed: 0.085, 
-      appearProgress: 0.85 
-    },
+  // Define 2 satellites that need repair around the station
+  const satellites = [
+    { position: [8, 3, 2] as [number, number, number], color: '#4ecdc4', scale: 1.2 },
+    { position: [-8, -2, -3] as [number, number, number], color: '#ff6b6b', scale: 1.1 },
   ];
 
-  // Get section information based on scroll progress
+  // Define repair drones - multiple drones navigate to each satellite for repairs
+  const repairDrones = [
+    // Drones repairing Satellite 1 (cyan)
+    { 
+      start: [12, 5, 5], 
+      target: satellites[0].position,
+      color: satellites[0].color,
+      speed: 0.08, 
+      appearProgress: 0.1 
+    },
+    { 
+      start: [5, 8, -2], 
+      target: satellites[0].position,
+      color: satellites[0].color,
+      speed: 0.09, 
+      appearProgress: 0.2 
+    },
+    { 
+      start: [10, -1, 6], 
+      target: satellites[0].position,
+      color: satellites[0].color,
+      speed: 0.07, 
+      appearProgress: 0.3 
+    },
+    { 
+      start: [6, 6, -4], 
+      target: satellites[0].position,
+      color: satellites[0].color,
+      speed: 0.085, 
+      appearProgress: 0.4 
+    },
+    // Drones repairing Satellite 2 (red)
+    { 
+      start: [-12, -5, -6], 
+      target: satellites[1].position,
+      color: satellites[1].color,
+      speed: 0.075, 
+      appearProgress: 0.5 
+    },
+    { 
+      start: [-6, -8, 3], 
+      target: satellites[1].position,
+      color: satellites[1].color,
+      speed: 0.095, 
+      appearProgress: 0.6 
+    },
+    { 
+      start: [-10, 2, -7], 
+      target: satellites[1].position,
+      color: satellites[1].color,
+      speed: 0.08, 
+      appearProgress: 0.7 
+    },
+    { 
+      start: [-5, -6, 5], 
+      target: satellites[1].position,
+      color: satellites[1].color, 
+      speed: 0.09, 
+      appearProgress: 0.8 
+    },
+  ];  // Get section information based on scroll progress
   const getSectionInfo = () => {
     if (scrollProgress < 0.1) {
       return { title: "The Core", description: "Every great station starts with a strong foundation" };
@@ -165,7 +156,17 @@ export default function ScrollAssemblyScene({ scrollProgress }: ScrollAssemblySc
           {/* Spline Space Station Model with scroll progress */}
           <SplineStation progress={scrollProgress} />
 
-          {/* Repair Drones - appear progressively */}
+          {/* Small Satellites around the station */}
+          {satellites.map((satellite, index) => (
+            <SmallSatellite
+              key={index}
+              position={satellite.position}
+              color={satellite.color}
+              scale={satellite.scale}
+            />
+          ))}
+
+          {/* Repair Drones - appear progressively and navigate to satellites */}
           {repairDrones.map((drone, index) => (
             <ScrollRepairDrone
               key={index}

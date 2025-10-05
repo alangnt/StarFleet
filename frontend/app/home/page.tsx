@@ -2,65 +2,15 @@
 
 import Link from 'next/link';
 import Navigation from '@/components/Navigation';
+import SpaceHero from '@/components/SpaceHero';
 
 export default function HomePage() {
   return (
     <div className="min-h-screen bg-black text-white">
       <Navigation />
       
-      {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden mesh-gradient">
-        {/* Animated background */}
-        <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-950/30 via-purple-950/30 to-black"></div>
-          <div className="stars-bg"></div>
-          {/* Radial glow effects */}
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"></div>
-        </div>
-
-        {/* Content */}
-        <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="mb-8">
-            <div className="inline-block px-6 py-2 glass-strong rounded-full mb-8 animate-fade-in">
-              <span className="text-sm font-medium gradient-text-static">Welcome to the Future of Space Funding</span>
-            </div>
-          </div>
-          <div className="animate-float">
-            <h1 className="text-6xl md:text-8xl font-bold mb-6 gradient-text animate-fade-in tracking-tight">
-              myStarlab
-            </h1>
-          </div>
-          <p className="text-2xl md:text-3xl text-white/90 mb-6 animate-fade-in-up font-light tracking-wide" style={{animationDelay: '0.2s'}}>
-            Democratizing Space Research Funding
-          </p>
-          <p className="text-lg md:text-xl text-gray-300 mb-12 max-w-3xl mx-auto animate-fade-in-up leading-relaxed" style={{animationDelay: '0.4s'}}>
-            Support groundbreaking space research projects. From autonomous repair drones to advanced orbital laboratories, 
-            help bring the future of space exploration to life.
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-scale-in" style={{animationDelay: '0.6s'}}>
-            <Link 
-              href="/projects"
-              className="group px-10 py-5 bg-gradient-to-r from-blue-500 via-purple-600 to-pink-500 text-white text-lg font-semibold rounded-xl hover:from-blue-600 hover:via-purple-700 hover:to-pink-600 transition-all duration-300 transform hover:scale-105 btn-glow relative overflow-hidden"
-            >
-              <span className="relative z-10">Explore Projects</span>
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
-            </Link>
-            <Link 
-              href="/starlab-station"
-              className="px-10 py-5 glass-strong text-white text-lg font-semibold rounded-xl border-2 border-white/20 hover:border-purple-500/50 glass-hover backdrop-blur-xl"
-            >
-              <span className="flex items-center gap-2">
-                <span>View Featured Project</span>
-                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                </svg>
-              </span>
-            </Link>
-          </div>
-        </div>
-      </section>
+      {/* Advanced Three.js Hero Section with GSAP Animations */}
+      <SpaceHero />
 
       {/* Stats Section */}
       <section className="py-24 bg-gradient-to-b from-black via-black to-blue-950/10 relative">
@@ -164,7 +114,7 @@ export default function HomePage() {
 
       {/* Featured Project CTA */}
       <section className="py-32 bg-gradient-to-b from-black via-purple-950/10 to-black relative overflow-hidden">
-        <div className="absolute inset-0 mesh-gradient opacity-40"></div>
+        <div className="absolute inset-0 mesh-gradient opacity-90"></div>
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-purple-500/20 rounded-full blur-3xl"></div>
         <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="glass-strong rounded-3xl p-12 md:p-16 border-2 border-purple-500/20 hover:border-purple-500/40 transition-all duration-500 backdrop-blur-xl">

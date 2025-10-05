@@ -51,7 +51,7 @@ export default function Navigation() {
           <Link href="/home" className="flex items-center group">
             <div>
               <div className="text-2xl font-bold bg-gradient-to-r from-slate-300 via-indigo-300 to-violet-300 bg-clip-text text-transparent group-hover:from-slate-200 group-hover:via-indigo-200 group-hover:to-violet-200 transition-all duration-300" style={{letterSpacing: '-0.02em'}}>
-                myStarlab
+                MyStarlab
               </div>
               <div className="text-[10px] text-gray-400 font-medium tracking-wider uppercase">Space Innovation</div>
             </div>

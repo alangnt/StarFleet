@@ -45,7 +45,7 @@ export default function StarlabStationPage() {
       {/* Project Info Overlay - fades out when reaching detailed section */}
       <div 
         className="fixed top-20 left-4 z-40 pointer-events-none backdrop-blur-xs transition-opacity duration-300 max-md:hidden"
-        style={{ opacity: scrollProgress >= 0.65 ? 0 : 1 }}
+        style={{ opacity: scrollProgress >= 0.42 ? 0 : 1 }}
       >
         <div className="card-premium p-7 pointer-events-auto max-w-md border border-white/10 rounded overflow-hidden">
             <div className="inline-flex items-center gap-2 badge-premium mb-4">
@@ -55,7 +55,7 @@ export default function StarlabStationPage() {
               <span>Autonomous Robotics</span>
             </div>
             <h1 className="text-3xl font-bold mb-2 gradient-text" style={{letterSpacing: '-0.01em'}}>
-              StarFleet Micro-Robots
+              StarFleet
             </h1>
             <p className="text-gray-300 mb-5 text-sm leading-relaxed">
               Swarm of autonomous micro-robots for on-orbit satellite maintenance and debris reduction
@@ -82,7 +82,7 @@ export default function StarlabStationPage() {
             <div className="divider-gradient mb-5"></div>
             
             {/* Stats */}
-            <div className="grid grid-cols-2 gap-3 mb-5">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-5">
               <div className="bg-gradient-to-br from-blue-500/10 to-purple-600/10 border border-blue-500/20 rounded-xl p-4 text-center">
                 <div className="text-2xl font-bold gradient-text-static">1,247</div>
                 <div className="text-xs text-gray-400 mt-1 font-medium">Backers</div>
@@ -109,7 +109,7 @@ export default function StarlabStationPage() {
       <ScrollAssemblyScene scrollProgress={scrollProgress} />
       
       {/* Scrollable content - this creates the scroll space */}
-      <div className="relative" style={{ height: '1000vh' }}></div>
+      <div className="relative" style={{ height: '400vh' }}></div>
 
       {/* Detailed Project Information */}
       <div className="relative bg-gradient-to-b from-black via-gray-900 to-black text-white py-24">
@@ -153,7 +153,7 @@ export default function StarlabStationPage() {
                 <div className="divider-gradient mb-8"></div>
                 
                 {/* Stats */}
-                <div className="grid grid-cols-2 gap-6 mb-8">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
                   <div className="bg-gradient-to-br from-blue-500/10 to-purple-600/10 border border-blue-500/20 rounded-xl p-6 text-center">
                     <div className="text-3xl font-bold gradient-text-static">1,247</div>
                     <div className="text-sm text-gray-400 mt-2 font-medium">Backers</div>

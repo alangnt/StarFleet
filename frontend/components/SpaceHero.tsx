@@ -523,17 +523,6 @@ export default function SpaceHero() {
         </div>
       </div>
 
-      {/* Scroll progress */}
-      <div ref={scrollProgressRef} className="fixed bottom-8 right-8 z-20 glass-strong rounded-xl p-4">
-        <div className="text-xs text-gray-400 mb-2">SCROLL</div>
-        <div className="w-32 h-1 bg-white/10 rounded-full overflow-hidden">
-          <div className="h-full bg-gradient-to-r from-slate-400 via-indigo-400 to-violet-400 transition-all duration-300" style={{ width: `${scrollProgress * 100}%` }} />
-        </div>
-        <div className="text-xs text-gray-400 mt-2">
-          {String(currentSection).padStart(2, '0')} / {String(totalSections).padStart(2, '0')}
-        </div>
-      </div>
-
       {/* Scroll sections */}
       <div className="relative z-10">
         {[1, 2].map((index) => (

@@ -125,7 +125,7 @@ export default function HomePage() {
                 </span>
               </div>
               <h2 className="text-4xl md:text-5xl font-bold mb-6 gradient-text-static">
-                Starlab Space Station
+                StarFleet
               </h2>
               <p className="text-xl text-gray-300 mb-8 leading-relaxed max-w-3xl mx-auto">
                 Experience autonomous repair drones maintaining a commercial space station. 

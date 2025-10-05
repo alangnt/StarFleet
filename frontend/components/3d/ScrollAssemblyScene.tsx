@@ -270,7 +270,7 @@ export default function ScrollAssemblyScene({ scrollProgress }: ScrollAssemblySc
       {/* Scroll instruction */}
       {scrollProgress < 0.1 && (
         <div className="fixed bottom-10 left-1/2 transform -translate-x-1/2 text-center animate-bounce">
-          <p className="text-white text-sm mb-2">Scroll to build</p>
+          <p className="text-white text-sm mb-2">Scroll to repair</p>
           <svg 
             className="w-6 h-6 mx-auto text-white" 
             fill="none" 

@@ -8,9 +8,9 @@ import ProjectCard from '@/components/ProjectCard';
 const projects = [
   {
     id: 1,
-    title: "Starlab Space Station",
-    description: "Autonomous repair drone system for commercial space stations. Advanced AI-powered drones maintain and repair orbital infrastructure.",
-    category: "Orbital Infrastructure",
+    title: "StarFleet Micro-Robots",
+    description: "Swarm of autonomous micro-robots for satellite repair and maintenance. Coordinated fleet reduces space debris and extends satellite operational life.",
+    category: "Autonomous Robotics",
     fundedAmount: 2400000,
     goalAmount: 5000000,
     backers: 1247,

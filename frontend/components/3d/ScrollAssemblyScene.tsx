@@ -28,8 +28,8 @@ export default function ScrollAssemblyScene({ scrollProgress }: ScrollAssemblySc
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
-  // Define repair drones positions - more drones appearing sooner
-  const repairDrones = [
+  // Define repair drones positions - reduced for mobile performance
+  const allRepairDrones = [
     { 
       start: [12, 5, 5] as [number, number, number], 
       target: [2, 2, 2] as [number, number, number],
@@ -92,6 +92,9 @@ export default function ScrollAssemblyScene({ scrollProgress }: ScrollAssemblySc
     },
   ];
 
+  // Use fewer drones on mobile for better performance (4 instead of 12)
+  const repairDrones = isMobile ? allRepairDrones.slice(0, 4) : allRepairDrones;
+
   // Get section information based on scroll progress
   const getSectionInfo = () => {
     if (scrollProgress < 0.15) {
@@ -99,7 +102,7 @@ export default function ScrollAssemblyScene({ scrollProgress }: ScrollAssemblySc
     } else if (scrollProgress < 0.35) {
       return { title: "Deploying Drone Fleet", description: "Autonomous repair systems launching" };
     } else if (scrollProgress < 0.55) {
-      return { title: "Swarm Coordination", description: "12 drones working in perfect harmony" };
+      return { title: "Swarm Coordination", description: `${repairDrones.length} drones working in perfect harmony` };
     } else if (scrollProgress < 0.75) {
       return { title: "Active Maintenance", description: "Precision repairs across the station" };
     } else {
@@ -118,14 +121,14 @@ export default function ScrollAssemblyScene({ scrollProgress }: ScrollAssemblySc
       <Canvas
         camera={{ position: [12, 8, 12], fov: 50 }}
         gl={{ 
-          antialias: true, 
+          antialias: !isMobile, 
           alpha: false,
           powerPreference: 'high-performance',
           toneMapping: 3, // ACESFilmicToneMapping
           toneMappingExposure: 1.2
         }}
-        shadows
-        dpr={[1, 2]} // Use device pixel ratio for sharper rendering
+        shadows={!isMobile}
+        dpr={isMobile ? [1, 1] : [1, 2]} // Lower DPR on mobile for better performance
       >
         <Suspense fallback={null}>
           {/* Enhanced Lighting */}
@@ -134,26 +137,28 @@ export default function ScrollAssemblyScene({ scrollProgress }: ScrollAssemblySc
             position={[10, 10, 5]} 
             intensity={1.5} 
             color="#ffffff"
-            castShadow
-            shadow-mapSize-width={2048}
-            shadow-mapSize-height={2048}
+            castShadow={!isMobile}
+            shadow-mapSize-width={isMobile ? 512 : 2048}
+            shadow-mapSize-height={isMobile ? 512 : 2048}
           />
           <directionalLight position={[-10, -10, -5]} intensity={0.5} color="#4a90e2" />
           <pointLight position={[0, 0, 10]} intensity={0.8} color="#ffffff" />
-          <spotLight
-            position={[15, 15, 15]}
-            angle={0.3}
-            penumbra={1}
-            intensity={0.5}
-            castShadow
-            color="#ffffff"
-          />
+          {!isMobile && (
+            <spotLight
+              position={[15, 15, 15]}
+              angle={0.3}
+              penumbra={1}
+              intensity={0.5}
+              castShadow
+              color="#ffffff"
+            />
+          )}
 
           {/* Space background with improved stars */}
           <Stars 
             radius={150} 
             depth={80} 
-            count={8000} 
+            count={isMobile ? 2000 : 8000} 
             factor={5} 
             saturation={0} 
             fade 
@@ -190,19 +195,21 @@ export default function ScrollAssemblyScene({ scrollProgress }: ScrollAssemblySc
             dampingFactor={0.05}
           />
 
-          {/* Post-processing effects */}
-          <EffectComposer>
-            <Bloom 
-              intensity={0.5}
-              luminanceThreshold={0.2}
-              luminanceSmoothing={0.9}
-              mipmapBlur
-            />
-            <ChromaticAberration
-              blendFunction={BlendFunction.NORMAL}
-              offset={[0.0005, 0.0005]}
-            />
-          </EffectComposer>
+          {/* Post-processing effects - disabled on mobile for performance */}
+          {!isMobile && (
+            <EffectComposer>
+              <Bloom 
+                intensity={0.5}
+                luminanceThreshold={0.2}
+                luminanceSmoothing={0.9}
+                mipmapBlur
+              />
+              <ChromaticAberration
+                blendFunction={BlendFunction.NORMAL}
+                offset={[0.0005, 0.0005]}
+              />
+            </EffectComposer>
+          )}
         </Suspense>
       </Canvas>
 
@@ -249,7 +256,7 @@ export default function ScrollAssemblyScene({ scrollProgress }: ScrollAssemblySc
                 <p>Complete</p>
               </div>
               <div>
-                <p className="text-3xl font-bold text-white">12</p>
+                <p className="text-3xl font-bold text-white">{repairDrones.length}</p>
                 <p>Repair Drones</p>
               </div>
               <div>

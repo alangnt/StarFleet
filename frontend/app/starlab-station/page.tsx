@@ -45,7 +45,7 @@ export default function StarlabStationPage() {
       {/* Project Info Overlay - fades out when reaching detailed section */}
       <div 
         className="fixed top-20 left-4 z-40 pointer-events-none backdrop-blur-xs transition-opacity duration-300 max-md:hidden"
-        style={{ opacity: scrollProgress >= 0.65 ? 0 : 1 }}
+        style={{ opacity: scrollProgress >= 0.42 ? 0 : 1 }}
       >
         <div className="card-premium p-7 pointer-events-auto max-w-md border border-white/10 rounded overflow-hidden">
             <div className="inline-flex items-center gap-2 badge-premium mb-4">
@@ -55,7 +55,7 @@ export default function StarlabStationPage() {
               <span>Autonomous Robotics</span>
             </div>
             <h1 className="text-3xl font-bold mb-2 gradient-text" style={{letterSpacing: '-0.01em'}}>
-              StarFleet Micro-Robots
+              StarFleet
             </h1>
             <p className="text-gray-300 mb-5 text-sm leading-relaxed">
               Swarm of autonomous micro-robots for on-orbit satellite maintenance and debris reduction
